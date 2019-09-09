@@ -1,0 +1,296 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="registrationFormAutomation" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="registrationFormAutomation_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Core.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="registrationFormAutomation" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:Browser" Name="browserName" />
+    </Sequence.Variables>
+    <ui:OpenBrowser BrowserType="IE" DisplayName="Open RegistrationForm" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" UiBrowser="[browserName]" Url="D:\UIpath-data\Registration.html">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Default="Mahesh" Name="strFirstName" />
+              <Variable x:TypeArguments="x:String" Default="akvemulapalli" Name="strLastName" />
+              <Variable x:TypeArguments="x:String" Default="Female" Name="strSex" />
+            </Sequence.Variables>
+            <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Enter First Name" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[strFirstName]">
+              <ui:SetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3954a761cbb8ea1333d9a342080bd6dd" Selector="&lt;webctrl name='First_Name' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:SetValue.Target>
+            </ui:SetValue>
+            <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Enter Last Name" sap2010:WorkflowViewState.IdRef="SetValue_2" Text="[strLastName]">
+              <ui:SetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5a6bbf30e25d08af46aa34a79693e5ce" Selector="&lt;webctrl name='Last_Name' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:SetValue.Target>
+            </ui:SetValue>
+            <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select  Date" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="11">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="32">
+                  <x:String>Day:</x:String>
+                  <x:String>1</x:String>
+                  <x:String>2</x:String>
+                  <x:String>3</x:String>
+                  <x:String>4</x:String>
+                  <x:String>5</x:String>
+                  <x:String>6</x:String>
+                  <x:String>7</x:String>
+                  <x:String>8</x:String>
+                  <x:String>9</x:String>
+                  <x:String>10</x:String>
+                  <x:String>11</x:String>
+                  <x:String>12</x:String>
+                  <x:String>13</x:String>
+                  <x:String>14</x:String>
+                  <x:String>15</x:String>
+                  <x:String>16</x:String>
+                  <x:String>17</x:String>
+                  <x:String>18</x:String>
+                  <x:String>19</x:String>
+                  <x:String>20</x:String>
+                  <x:String>21</x:String>
+                  <x:String>22</x:String>
+                  <x:String>23</x:String>
+                  <x:String>24</x:String>
+                  <x:String>25</x:String>
+                  <x:String>26</x:String>
+                  <x:String>27</x:String>
+                  <x:String>28</x:String>
+                  <x:String>29</x:String>
+                  <x:String>30</x:String>
+                  <x:String>31</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2798cee2f48fb6b36093f4b152a1c75f" Selector="&lt;webctrl id='Birthday_Day' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Month" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="Nov">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="16">
+                  <x:String>Month:</x:String>
+                  <x:String>Jan</x:String>
+                  <x:String>Feb</x:String>
+                  <x:String>Mar</x:String>
+                  <x:String>Apr</x:String>
+                  <x:String>May</x:String>
+                  <x:String>Jun</x:String>
+                  <x:String>Jul</x:String>
+                  <x:String>Aug</x:String>
+                  <x:String>Sep</x:String>
+                  <x:String>Oct</x:String>
+                  <x:String>Nov</x:String>
+                  <x:String>Dec</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dc1ebd51a76de9f15c03b784fea942bf" Selector="&lt;webctrl id='Birthday_Month' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select  Year" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="1994">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="64">
+                  <x:String>Year:</x:String>
+                  <x:String>2012</x:String>
+                  <x:String>2011</x:String>
+                  <x:String>2010</x:String>
+                  <x:String>2009</x:String>
+                  <x:String>2008</x:String>
+                  <x:String>2007</x:String>
+                  <x:String>2006</x:String>
+                  <x:String>2005</x:String>
+                  <x:String>2004</x:String>
+                  <x:String>2003</x:String>
+                  <x:String>2002</x:String>
+                  <x:String>2001</x:String>
+                  <x:String>2000</x:String>
+                  <x:String>1999</x:String>
+                  <x:String>1998</x:String>
+                  <x:String>1997</x:String>
+                  <x:String>1996</x:String>
+                  <x:String>1995</x:String>
+                  <x:String>1994</x:String>
+                  <x:String>1993</x:String>
+                  <x:String>1992</x:String>
+                  <x:String>1991</x:String>
+                  <x:String>1990</x:String>
+                  <x:String>1989</x:String>
+                  <x:String>1988</x:String>
+                  <x:String>1987</x:String>
+                  <x:String>1986</x:String>
+                  <x:String>1985</x:String>
+                  <x:String>1984</x:String>
+                  <x:String>1983</x:String>
+                  <x:String>1982</x:String>
+                  <x:String>1981</x:String>
+                  <x:String>1980</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dcb40f7ebeb396a7681e1a6af21a05fe" Selector="&lt;webctrl id='Birthday_Year' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <If Condition="[strSex=&quot;Male&quot;]" DisplayName="Gender Check" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check Male" sap2010:WorkflowViewState.IdRef="Check_1">
+                  <ui:Check.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="852301c7d800325592b7e4a7cde41b79" Selector="&lt;webctrl idx='1' name='Gender' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Check.Target>
+                </ui:Check>
+              </If.Then>
+              <If.Else>
+                <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check Female" sap2010:WorkflowViewState.IdRef="Check_2">
+                  <ui:Check.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="93a0d4fd91b39a4646b3eebe4420f1f8" Selector="&lt;webctrl idx='2' name='Gender' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Check.Target>
+                </ui:Check>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+    <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set  Address" sap2010:WorkflowViewState.IdRef="SetValue_3" Text="Hyderabad">
+      <ui:SetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="576bd7496826e4bff124e7409124c516" Selector="&lt;html title='Student Registration Form' /&gt;&lt;webctrl tag='TEXTAREA' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:SetValue.Target>
+    </ui:SetValue>
+    <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set City" sap2010:WorkflowViewState.IdRef="SetValue_4" Text="Hyderabad">
+      <ui:SetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="58acde7dded7a12d3cea2ddff0483ee2" Selector="&lt;html title='Student Registration Form' /&gt;&lt;webctrl name='City' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:SetValue.Target>
+    </ui:SetValue>
+    <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Pincode" sap2010:WorkflowViewState.IdRef="SetValue_5" Text="500039">
+      <ui:SetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ed8fd8475085d603e9a12ca9bc1cdd95" Selector="&lt;html title='Student Registration Form' /&gt;&lt;webctrl name='Pin_Code' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:SetValue.Target>
+    </ui:SetValue>
+    <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set State" sap2010:WorkflowViewState.IdRef="SetValue_6" Text="Telangana">
+      <ui:SetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d1e680fc1285b914a79ef7d4175ab437" Selector="&lt;html title='Student Registration Form' /&gt;&lt;webctrl name='State' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:SetValue.Target>
+    </ui:SetValue>
+    <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check Drawing" sap2010:WorkflowViewState.IdRef="Check_3">
+      <ui:Check.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="94679c8171fcce2f71d6e0e66fb0c1d5" Selector="&lt;html title='Student Registration Form' /&gt;&lt;webctrl name='Hobby_Drawing' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:Check.Target>
+    </ui:Check>
+    <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check Dancing" sap2010:WorkflowViewState.IdRef="Check_4">
+      <ui:Check.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dd8f21c27c1640846328235d5fe5c25b" Selector="&lt;html title='Student Registration Form' /&gt;&lt;webctrl name='Hobby_Dancing' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:Check.Target>
+    </ui:Check>
+    <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check Sketching" sap2010:WorkflowViewState.IdRef="Check_5">
+      <ui:Check.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="cac92852e643113e2646e4523242eba4" Selector="&lt;html title='Student Registration Form' /&gt;&lt;webctrl name='Hobby_Cooking' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:Check.Target>
+    </ui:Check>
+    <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <ui:CloseTab Browser="[browserName]" DisplayName="Private: Close RegistrationForm" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+    <sads:DebugSymbol.Symbol>d0xDOlxVc2Vyc1xVc2VyXERvY3VtZW50c1xVaVBhdGhcY2FsYy1zZWxlY3RvclxyZWdpc3RyYXRpb25Gb3JtQXV0b21hdGlvbi54YW1sNTsD+gEOAgEBPwXTARYCARnUAQXYARMCARbZAQXdARMCARPeAQXiARMCARDjAQXnARMCAQ3oAQXsARACAQvtAQXxARACAQnyAQX2ARACAQf3AQX3AUwCAQX4AQX4AYcBAgECP7UBP8QBAgE5P8kBP+sBAgE4RQvQARYCARrUAacB1AGyAQIBF9YBmAHWAeoBAgEY2QGjAdkBrgECARTbAZgB2wHzAQIBFd4BpgHeAa4BAgER4AGYAeAB9wECARLjAaQB4wGvAQIBDuUBmAHlAfQBAgEP6gGYAeoB/AECAQzvAZgB7wH8AQIBCvQBmAH0AfwBAgEI9wEV9wEfAgEG+AEa+AEpAgEDRzxHRAIBHUg8SEsCARxJPElEAgEbSw1LVAIBNkwNUBsCATJRDVUbAgEuVg1+HQIBK38NlAEdAgEolQENvwEdAgElwAENzwESAgEeSx1LJwIBN0yzAUzDAQIBM06gAU7RAQIBNVGyAVHBAQIBL1OgAVPQAQIBMVazAVa3AQIBLHygAXzSAQIBLX+zAX+4AQIBKZIBoAGSAdQBAgEqlQGzAZUBuQECASa9AaABvQHTAQIBJ8ABG8ABNgIBH8IBEcYBHAIBI8kBEc0BHAIBIcQBpAHEAdkBAgEkywGkAcsB2QECASI=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Delay_2" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="SetValue_1" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SetValue_2" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_1" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_2" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_3" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Check_1" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Check_2" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="314,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,1107">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="414,1206" />
+      <sap2010:ViewStateData Id="SetValue_3" sap:VirtualizedContainerService.HintSize="414,134" />
+      <sap2010:ViewStateData Id="SetValue_4" sap:VirtualizedContainerService.HintSize="414,134" />
+      <sap2010:ViewStateData Id="SetValue_5" sap:VirtualizedContainerService.HintSize="414,134" />
+      <sap2010:ViewStateData Id="SetValue_6" sap:VirtualizedContainerService.HintSize="414,134" />
+      <sap2010:ViewStateData Id="Check_3" sap:VirtualizedContainerService.HintSize="414,106" />
+      <sap2010:ViewStateData Id="Check_4" sap:VirtualizedContainerService.HintSize="414,106" />
+      <sap2010:ViewStateData Id="Check_5" sap:VirtualizedContainerService.HintSize="414,106" />
+      <sap2010:ViewStateData Id="Delay_1" sap:VirtualizedContainerService.HintSize="414,22" />
+      <sap2010:ViewStateData Id="CloseTab_1" sap:VirtualizedContainerService.HintSize="414,22" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="436,2588">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="registrationFormAutomation_1" sap:VirtualizedContainerService.HintSize="476,2748" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
